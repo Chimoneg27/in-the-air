@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { v4 as uuidv4 } from 'uuid';
@@ -36,18 +37,38 @@ const initialState = {
   isDataFetched: false,
 };
 
+const citiesWeather = createAsyncThunk(
+  'weather/citiesWeather',
+  async (_, { getState }) => {
+    const { cityList } = getState().weather;
+    const dataWeatherWithCities = await Promise.all(
+      cityList.map(async (city) => {
+        const cityData = await fetchCity(city);
+        if (cityData.length > 0) {
+          const { lat, lon } = cityData[0];
+          const weatherData = await fetchWeather(lat, lon);
+          return {
+            id: uuidv4(), city, lat, lon, data: weatherData.list[0],
+          };
+        }
+        return {};
+      }),
+    );
+    return dataWeatherWithCities;
+  },
+);
+
 const weatherSlice = createSlice({
   name: 'weather',
   initialState,
   reducers: {},
-  extraReducers: {
-    [fetchCity.fulfilled]: (state, action) => {
-      state.cityData = [...state.cityData, { ...action.payload, id: uuidv4() }];
+  extrareducers: (builder) => {
+    builder.addCase(citiesWeather.fulfilled, (state, action) => {
+      state.cityData = action.payload;
       state.isDataFetched = true;
-    },
-    [fetchWeather.fulfilled]: (state, action) => {
-      const index = state.cityData.findIndex((city) => city.id === action.payload.id);
-      state.cityData[index].weather = action.payload;
-    },
+    });
   },
 });
+
+export { citiesWeather };
+export default weatherSlice.reducer;
