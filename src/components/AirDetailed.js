@@ -16,4 +16,9 @@ const AirDetailed = ({ dataname, data }) => {
   );
 };
 
+AirDetailed.propTypes = {
+  dataname: PropTypes.string.isRequired,
+  data: PropTypes.string.isRequired,
+};
+
 export default AirDetailed;
