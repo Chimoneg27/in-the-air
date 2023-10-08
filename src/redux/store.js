@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import { configureStore } from '@reduxjs/toolkit';
 import weatherReducer from './weatherSlice/weatherSlice';
 
@@ -6,3 +7,5 @@ const store = configureStore({
     weather: weatherReducer,
   },
 });
+
+export default store;
