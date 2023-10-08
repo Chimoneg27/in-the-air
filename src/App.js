@@ -1,15 +1,18 @@
 import React from 'react';
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import Nav from './components/Nav';
+import AirDetails from './components/AirDetails';
+import Weather from './components/Weather';
+import Capitals from './components/Capitals';
 
 function App() {
   return (
     <BrowserRouter>
       <Nav />
       <Routes>
-        <Route path="/" element={<h1>Home</h1>} />
-        <Route path="/about" element={<h1>About</h1>} />
-        <Route path="/contact" element={<h1>Contact</h1>} />
+        <Route path="/" element={<Weather />} />
+        <Route path="/air-details" element={<AirDetails />} />
+        <Route path="/capitals" element={<Capitals />} />
       </Routes>
     </BrowserRouter>
   );
