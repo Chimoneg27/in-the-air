@@ -1,25 +1,21 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
-import { NavLink } from 'react-router-dom';
-import logo from '../assets/arrow-left.svg';
+import PropTypes from 'prop-types';
+// import mapLogo from '../assets/world-map.svg';
+import logo from '../assets/weather-svgrepo.svg';
+import SearchFilter from './SearchFilter';
 import '../Style/Navigation.css';
 
-function Nav() {
-  return (
-    <nav>
-      <div className="navigation">
-        <img src={logo} alt="back" />
-        <span>Back</span>
-      </div>
+const Nav = ({ handleFilterChange }) => (
+  <nav className="navigation">
+    <img className="logo" src={logo} alt="logo" />
+    <h1>In The Air</h1>
+    <SearchFilter handleFilterChange={handleFilterChange} />
+  </nav>
+);
 
-      <ul className="Items">
-        <li>
-          <NavLink to="/air-details" activeClassName="active">
-            Air Details
-          </NavLink>
-        </li>
-      </ul>
-    </nav>
-  );
-}
+Nav.propTypes = {
+  handleFilterChange: PropTypes.func.isRequired,
+};
 
 export default Nav;
