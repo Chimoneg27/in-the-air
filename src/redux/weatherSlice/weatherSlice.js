@@ -5,33 +5,19 @@ import { v4 as uuidv4 } from 'uuid';
 
 const key = '58004b28c7eaf305323db1ef5f38c044';
 const fetchCity = async (city) => {
-  const response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}`);
+  const response = await axios.get(`https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${key}`);
   return response.data;
 };
 
 const fetchWeather = async (lat, lon) => {
-  const response = await axios.get(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${key}`);
+  const response = await axios.get(`https://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${key}`);
   return response.data;
 };
 
 const initialState = {
   cityList: [
     'London',
-    'Paris',
-    'Berlin',
-    'Madrid',
-    'Rome',
-    'Brussels',
-    'Amsterdam',
-    'Dublin',
-    'Vienna',
-    'Budapest',
-    'Prague',
-    'Warsaw',
-    'Oslo',
-    'Stockholm',
-    'Helsinki',
-    'Copenhagen',
+    'Harare',
   ],
   cityData: [],
   isDataFetched: false,
@@ -62,7 +48,7 @@ const weatherSlice = createSlice({
   name: 'weather',
   initialState,
   reducers: {},
-  extrareducers: (builder) => {
+  extraReducers: (builder) => {
     builder.addCase(citiesWeather.fulfilled, (state, action) => {
       state.cityData = action.payload;
       state.isDataFetched = true;
