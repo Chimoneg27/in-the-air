@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Open+Sans&family=Roboto&display=swap');
+
+:root {
+  --text: #130e01;
+  --background: #fffaeb;
+  --primary: #ff8400;
+  --secondary: #fff5d6;
+  --accent: #cf4307;
+}
+
+.air-details {
+  background-color: var(--accent);
+  padding: 1rem;
+  height: 80vh;
+}
+
+.pollution-data {
+  font-family: 'Open Sans', sans-serif;
+  color: var(--background);
+}
