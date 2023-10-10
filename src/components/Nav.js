@@ -14,7 +14,7 @@ const Nav = ({ handleFilterChange }) => (
       <SearchFilter handleFilterChange={handleFilterChange} />
     </nav>
     <div className="Banner">
-      <h2>Air Toxicity Levels Across Global Cities</h2>
+      <h2>Air Toxicity Levels Across Major Cities</h2>
     </div>
   </header>
 );
