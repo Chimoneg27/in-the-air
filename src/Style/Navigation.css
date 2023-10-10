@@ -16,23 +16,28 @@
 
 .navigation {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
   font-family: 'Inter', sans-serif;
   width: 100%;
   padding: 1rem;
-  background-color: var(--primary);
+  background-color: var(--accent);
   color: var(--secondary);
-  margin-bottom: 3rem;
+  border-bottom: var(--accent);
 }
 
 .navigation input {
   padding: 0.5rem;
   border-radius: 8px;
   outline: none;
+  background-color: var(--primary);
   border: none;
-  background-color: var(--accent);
   font-size: 1.05rem;
+}
+
+.navigation h1 {
+  width: 40%;
+  text-align: center;
 }
 
 .navigation input::placeholder {
@@ -40,6 +45,17 @@
 }
 
 .navigation img {
-  width: 3.5rem;
-  height: 3.5rem;
+  width: 15%;
+  height: 3rem;
+}
+
+.Banner {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.25rem;
+  color: var(--background);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  text-align: center;
 }
