@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Open+Sans&family=Roboto&display=swap');
+
+:root {
+  --text: #130e01;
+  --background: #fffaeb;
+  --primary: #ff8400;
+  --secondary: #fff5d6;
+  --accent: #cf4307;
+}
+
+#main-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--primary);
+}
+
+.arrow {
+  width: 1.25rem;
+  height: 1.25rem;
+  border: solid 2px white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.arrow-img {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  height: 1.25rem;
+  margin-top: 5px;
+  border-radius: 100%;
+}
+
+.cities {
+  border: 2px solid var(--accent);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.cities a {
+  text-decoration: none;
+  color: white;
+}
+
+.cities a:nth-child(4n + 2),
+.cities a:nth-child(4n + 3),
+.cities a:nth-child(4n + 6),
+.cities a:nth-child(4n + 7),
+.cities a:nth-child(4n + 10) {
+  background-color: var(--accent);
+}
+
+.cities a:nth-child(4n + 1),
+.cities a:nth-child(4n + 4) {
+  background-color: var(--primary);
+}
+
+.cities-weather {
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cities-weather h2 {
+  font-family: 'Roboto', sans-serif;
+}
+
+.fair,
+.good,
+.moderate,
+.poor,
+.very-poor,
+.quality,
+.quality-index-header {
+  font-family: 'Inter', sans-serif;
+  text-align: center;
+}
