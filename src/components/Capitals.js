@@ -2,32 +2,30 @@
 import PropTypes from 'prop-types';
 
 const Capitals = ({ city, aqi }) => {
-  let status = '';
+  let weatherStatus = '';
 
   if (aqi === 1) {
-    status = 'Good';
+    weatherStatus = 'Good';
   } else if (aqi === 2) {
-    status = 'Fair';
+    weatherStatus = 'Fair';
   } else if (aqi === 3) {
-    status = 'Moderate';
+    weatherStatus = 'Moderate';
   } else if (aqi === 4) {
-    status = 'Poor';
+    weatherStatus = 'Poor';
   } else if (aqi === 5) {
-    status = 'Very Poor';
+    weatherStatus = 'Very Poor';
   }
-
-  const statusClassName = status.toLowerCase().replace(' ', '-');
-
+  const statusClassName = weatherStatus.toLowerCase().replace(' ', '-');
   return (
-    <div className="capitals">
+    <div className="cities-weather flex">
       <h2>{city}</h2>
-      <div className="air-status">
-        <span className="quality">Air Quality:</span>
-        <span className={`status ${statusClassName}`}>{status}</span>
+      <div className="air-quality">
+        <span className="quality">Quality of air:</span>
+        <span className={statusClassName}>{weatherStatus}</span>
       </div>
-      <div className="index">
-        <span className="quality-header">Quality Index:</span>
-        <span className={`status ${statusClassName}`}>{aqi}</span>
+      <div className="quality-index">
+        <span className="quality-index-header">Quality index:</span>
+        <span className={statusClassName}>{aqi}</span>
       </div>
     </div>
   );
