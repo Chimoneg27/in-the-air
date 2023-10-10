@@ -3,8 +3,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const SearchFilter = ({ handleFilterChange }) => (
-  <div className="search-filter">
-    <input type="text" placeholder="Search..." onChange={(e) => handleFilterChange(e.target.value)} />
+  <div className="filter">
+    <input
+      type="text"
+      placeholder="Search city..."
+      onChange={(e) => handleFilterChange(e.target.value)}
+    />
   </div>
 );
 
