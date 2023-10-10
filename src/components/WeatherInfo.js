@@ -10,13 +10,11 @@ const WeatherInfo = () => {
   const selectCapitalData = capitalData.find((city) => city.id === id);
   const cityName = selectCapitalData ? selectCapitalData.city : '';
   const aqi = AirDetails(id, capitalData);
-  console.log(capitalData);
   return (
     <div className="air-details">
       <nav className="details-nav">
         <Link to="/" className="back">
-          <span className="arrow">←</span>
-          Back
+          <span className="arrow-back">&larr;</span>
         </Link>
         <h1>{cityName}</h1>
       </nav>

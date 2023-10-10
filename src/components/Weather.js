@@ -6,6 +6,7 @@ import Nav from './Nav';
 import Capitals from './Capitals';
 import arrow from '../assets/arrow-right.svg';
 import '../Style/Weather.css';
+import '../Style/Mobile.css';
 
 const Weather = () => {
   const capitalData = useSelector((state) => state.weather.cityData);
