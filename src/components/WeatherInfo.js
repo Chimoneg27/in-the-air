@@ -2,14 +2,15 @@ import { useSelector } from 'react-redux';
 import { useParams, Link } from 'react-router-dom';
 import AirDetails from './AirDetails';
 import AirDetailed from './AirDetailed';
+import '../Style/Details.css';
 
 const WeatherInfo = () => {
-  const cityData = useSelector((state) => state.weather.cityData);
+  const capitalData = useSelector((state) => state.weather.cityData);
   const { id } = useParams();
-  const selectCapitalData = cityData.find((city) => city.id === id);
-  const cityName = selectCapitalData.city ? selectCapitalData.city : '';
-  const air = AirDetails(id, cityData);
-
+  const selectCapitalData = capitalData.find((city) => city.id === id);
+  const cityName = selectCapitalData ? selectCapitalData.city : '';
+  const aqi = AirDetails(id, capitalData);
+  console.log(capitalData);
   return (
     <div className="air-details">
       <nav className="details-nav">
@@ -17,14 +18,14 @@ const WeatherInfo = () => {
           <span className="arrow">←</span>
           Back
         </Link>
-        <h2>{cityName}</h2>
+        <h1>{cityName}</h1>
       </nav>
       <header className="intro">
-        <h1 className="title">Air Quality</h1>
+        <h2 className="title">Air Quality</h2>
       </header>
       <section className="conc-header">Concentration in μg/m3</section>
       <section className="pollution-data">
-        {air.map((component) => (
+        {aqi.map((component) => (
           <AirDetailed
             key={component.dataname}
             dataname={component.dataname}

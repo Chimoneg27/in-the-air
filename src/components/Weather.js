@@ -5,14 +5,14 @@ import { citiesWeather } from '../redux/weatherSlice/weatherSlice';
 import Nav from './Nav';
 import Capitals from './Capitals';
 import arrow from '../assets/arrow-right.svg';
-import '../Style/Capitals.css';
+import '../Style/Weather.css';
 
 const Weather = () => {
   const capitalData = useSelector((state) => state.weather.cityData);
   const isDataFetched = useSelector((state) => state.weather.isDataFetched);
   const dispatch = useDispatch();
-
-  const [filteredCities, setFilteredCities] = useState([]);
+  console.log(capitalData);
+  const [filteredCities, setFilteredCities] = useState(capitalData);
   const handleFilterChange = (filterText) => {
     const filtered = capitalData.filter(
       (city) => city.city.toLowerCase().includes(filterText.toLowerCase()),
@@ -33,19 +33,18 @@ const Weather = () => {
   return (
     <div id="main-wrapper">
       <Nav handleFilterChange={handleFilterChange} />
-      <div className="cities">
+      <section className="cities flex">
         {filteredCities.map((city) => (
           <Link className="flex" to={`city/${city.id}`} key={city.id}>
-            <div className="image">
-              <img className="arrow" src={arrow} alt="right-arrow" />
-            </div>
+            <div className="arrow-img"><img className="arrow" src={arrow} alt="arrow" /></div>
             <Capitals
+              key={city.id}
               city={city.city}
               aqi={city.data.main.aqi}
             />
           </Link>
         ))}
-      </div>
+      </section>
     </div>
   );
 };
