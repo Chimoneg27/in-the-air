@@ -1,0 +1,16 @@
+@media (max-width: 480px) {
+  .navigation input {
+    width: 60%;
+    margin-left: 3rem;
+  }
+
+  .fair,
+  .good,
+  .moderate,
+  .poor,
+  .very-poor,
+  .quality,
+  .quality-index-header {
+    font-size: 0.8rem;
+  }
+}

@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Open+Sans&family=Roboto&display=swap');
+
+:root {
+  --text: #130e01;
+  --background: #fffaeb;
+  --primary: #ff8400;
+  --secondary: #fff5d6;
+  --accent: #cf4307;
+}
+
+.air-details {
+  background-color: var(--accent);
+  padding: 1rem;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.back {
+  text-decoration: none;
+}
+
+.arrow-back {
+  font-weight: 700;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--text);
+  height: 2rem;
+  width: 2rem;
+  color: var(--background);
+  border-radius: 10px;
+}
+
+.air-details h1,
+.air-details h2 {
+  font-family: 'Roboto', sans-serif;
+  color: var(--background);
+  padding: 1rem;
+  text-align: center;
+}
+
+.pollution-data {
+  padding: 1rem;
+  font-size: 1.15rem;
+  color: var(--background);
+}
+
+.data-component-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  text-align: center;
+  padding: 1rem;
+}
+
+.conc-header {
+  font-size: 1.25rem;
+  color: var(--background);
+  text-align: center;
+}
+
+.data-component-wrap:nth-child(even) {
+  background-color: var(--accent);
+}
+
+.data-component-wrap:nth-child(odd) {
+  background-color: var(--primary);
+}
