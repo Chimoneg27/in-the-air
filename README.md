@@ -70,6 +70,10 @@
  ## 🚀 Live Demo <a name="live-demo"></a>
 - [Space Travelers Hub](https://in-the-air.onrender.com/)
 
+##  <a Video walkthrough name="live-demo"></a>
+
+ - [Video walkthrough](https://www.loom.com/share/379b5b1168c04a12b03faa7c413085b1?sid=1578f31b-5289-4f50-9a65-bc2d1e0dc560)
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p> 
 
@@ -201,7 +205,8 @@ Give a ⭐️ if you like this project! It's help a lot
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-- I'd like to acknowledge the microvere staff for all of their wonderful support and network.
+- [Nelson Sakwa](https://www.behance.net/sakwadesignstudio) for the website design layout.
+- [OpenWeatherApi](https://openweathermap.org/) for the amazing API.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
