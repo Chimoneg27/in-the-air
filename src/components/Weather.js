@@ -12,7 +12,6 @@ const Weather = () => {
   const capitalData = useSelector((state) => state.weather.cityData);
   const isDataFetched = useSelector((state) => state.weather.isDataFetched);
   const dispatch = useDispatch();
-  console.log(capitalData);
   const [filteredCities, setFilteredCities] = useState(capitalData);
   const handleFilterChange = (filterText) => {
     const filtered = capitalData.filter(
