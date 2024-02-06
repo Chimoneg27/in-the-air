@@ -68,7 +68,7 @@
 <!-- LIVE DEMO -->
 
  ## 🚀 Live Demo <a name="live-demo"></a>
-- [Space Travelers Hub](https://in-the-air.onrender.com/)
+- [In The Air](https://in-the-air.onrender.com/)
 
 ##  <a Video walkthrough name="live-demo"></a>
 
